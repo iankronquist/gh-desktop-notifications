@@ -5,12 +5,16 @@ create a new token. Uncheck all of the boxes which are checked by default.
 Check the `notifications` box. Click the big green `Generate Token` button and
 copy the token.
 
-Also install the requests library and make sure it's accessible by the user
-who's going to be running this.
 ![checkboxes](./checkboxes.png)
 
 ![token](./token.png)
 
+Also install the requests python package and make sure it's accessible by the
+user who's going to be running this.
+
+```
+$ pip install requests
+```
 
 Next create a config file called `.gh-desktop-notifications.json`. It should
 have the following form:
