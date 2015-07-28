@@ -7,6 +7,10 @@ copy the token.
 
 Also install the requests library and make sure it's accessible by the user
 who's going to be running this.
+![checkboxes](./checkboxes.png)
+
+![token](./token.png)
+
 
 Next create a config file called `.gh-desktop-notifications.json`. It should
 have the following form:
