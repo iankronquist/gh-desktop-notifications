@@ -24,14 +24,19 @@ def main():
     notifications = r.json()
     if notifications != []:
         repo_names = map(lambda obj: "{}: {}".format(
-                         obj.get('repository').get('name'),
-                         obj.get('subject').get('title')),
+                         zealously_sanitize(obj.get('repository').get('name')),
+                         zealously_sanitize(obj.get('subject').get('title'))),
                          notifications
                          )
         text = ' '.join(repo_names)
         full_command = config.get('script').format(title=title, text=text)
         full_command = shlex.split(full_command)
         subprocess.call(full_command)
+
+
+def zealously_sanitize(string):
+    return string.replace('"', "").replace("'", "").replace(
+        '`', '').replace('$', "").replace('\\', '')
 
 
 if __name__ == '__main__':
