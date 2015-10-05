@@ -1,5 +1,4 @@
-#!/usr/local/bin/python
-# Use the brew python
+#!/usr/bin/env python
 
 import json
 from os import path
